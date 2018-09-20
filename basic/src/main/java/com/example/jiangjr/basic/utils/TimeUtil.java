@@ -8,34 +8,53 @@ import java.util.Date;
  */
 public class TimeUtil {
 
-    public static String getTimeFormat(){
-        try{
+    public static String getTimeFormat() {
+        try {
             Date dateFormat = new Date();
             SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd-hh-mm-ss");
             return new SimpleDateFormat("yyMMddhhmmss").format(dateFormat);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return "";
     }
 
-    public static String getSystemTimeFormat(){
-        try{
+    public static String getSystemTimeFormat() {
+        try {
             Date dateFormat = new Date();
             SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd-hh-mm-ss");
             return new SimpleDateFormat("yy-MM-dd-hh:mm:ss").format(dateFormat);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return "";
     }
 
-    public static String getSystemTimeFormatHHmm(){
-        try{
+    public static long getSystemTimeFormat(String dateFormat) {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd hh-mm-ss");
+            return new SimpleDateFormat("yy-MM-dd hh:mm:ss").parse(dateFormat).getTime();
+        } catch (Exception e) {
+
+        }
+        return 0;
+    }
+
+    public String getMinute(int time) {
+        return time / 60 % 60 + "";
+    }
+
+    public String getSecond(int time) {
+        int num = time % 60;
+        return num < 10 ? (0 + "" + num) : (num + "");
+    }
+
+    public static String getSystemTimeFormatHHmm() {
+        try {
             Date dateFormat = new Date();
             SimpleDateFormat format = new SimpleDateFormat("hh-mm");
             return new SimpleDateFormat("hh:mm").format(dateFormat);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return "";
