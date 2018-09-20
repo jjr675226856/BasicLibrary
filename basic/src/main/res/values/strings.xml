@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">mylibrary</string>
+
+    <string name="back">返回</string>
+    <string name="off">关闭</string>
+    <!--layout loading -->
+    <string name="common_loading_message">加载中...</string>
+    <!--layout message-->
+    <string name="common_empty_msg">抱歉,暂未获取到数据!\n请点击屏幕重试~</string>
+    <string name="common_error_msg">抱歉,系统出错了!\n请点击屏幕重试~</string>
+    <string name="common_no_network_msg">暂未连接上网络!\n请连接后点击屏幕重试~</string>
+
+    <!-- 下拉刷新 -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+    <string name="title_dialog">提示</string>
+    <string name="resume">开启</string>
+    <string name="message_permission_rationale">授予以下权限继续该程序:\n\n%1$s</string>
+</resources>

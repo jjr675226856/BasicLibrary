@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_custom_dialog"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center|bottom"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/word_color"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_dialog_msg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="@color/word_color"
+            android:textSize="@dimen/text_size_h4"
+            android:text=""
+            android:layout_weight="1"
+            android:minHeight="40dp"
+            android:visibility="visible"
+            android:orientation="vertical" >
+        </TextView>
+
+        <View
+            android:id="@+id/view_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="20dp"
+            android:background="#dcdcdc" />
+
+        <LinearLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_nag"
+                style="@style/style_bg_btn_base_dialog_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/view_mid2"
+                android:layout_width="0.8dp"
+                android:layout_height="match_parent"
+                android:background="#dcdcdc" />
+
+            <Button
+                android:id="@+id/btn_pos"
+                style="@style/style_bg_btn_base_dialog_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/green_color"
+                android:text="@string/ok"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
