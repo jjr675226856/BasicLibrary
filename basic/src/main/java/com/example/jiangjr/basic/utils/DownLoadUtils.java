@@ -18,9 +18,9 @@ public class DownLoadUtils {
     public DownLoadUtils(){}
 
     //TODO 下载图片
-    public static File getDownloadImage(String fileName,String url) {
+    public static File getDownloadImage(String fileName,String url,String pageName) {
         URL mUrl;
-        File file = FileUtils.saveFileImage(fileName);
+        File file = FileUtils.saveFileImage(fileName,pageName);
         HttpURLConnection connection;
         BufferedInputStream in = null;
         FileOutputStream outputStream = null;
