@@ -13,9 +13,9 @@ import java.io.IOException;
 public class ImageFileUtil {
 
     //bitmap 格式的图片转换为File
-    public static File saveBitmapFile(Bitmap bitmap) {
+    public static File saveBitmapFile(Bitmap bitmap,String pageName) {
         try {
-            File imageFile = FileUtils.saveFileTakePhotoImage(TimeUtil.getTimeFormat());
+            File imageFile = FileUtils.saveFileTakePhotoImage(TimeUtil.getTimeFormat(),pageName);
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(imageFile));
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
             bos.flush();
