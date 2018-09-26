@@ -31,7 +31,7 @@ public class FileUtils {
      * @return
      *    获取SDCard 根目录 ：Environment.getExternalStorageDirectory().getAbsolutePath()
      */
-    public static String getSdCardPath() {
+    public static String getSdCardPath(String pageName) {
         File file = new File(Environment.getExternalStorageDirectory()
                 .getAbsolutePath()
                 + File.separator  //代表-> /
@@ -39,7 +39,7 @@ public class FileUtils {
                 + File.separator
                 + "data"
                 + File.separator
-                + "com.jiangjr.helpsend"
+                + pageName
                 + File.separator
                 + "cache" + File.separator);
 
@@ -54,7 +54,7 @@ public class FileUtils {
      * @return
      *
      */
-    public static String getCachePath() {
+    public static String getCachePath(String pageName) {
         File file = new File(Environment.getDownloadCacheDirectory()
                 .getAbsolutePath()
                 + File.separator
@@ -62,7 +62,7 @@ public class FileUtils {
                 + File.separator
                 + "data"
                 + File.separator
-                + "com.jiangjr.helpsend"
+                + pageName
                 + File.separator
                 + "cache" + File.separator);
         if (!file.exists()) {
@@ -71,8 +71,8 @@ public class FileUtils {
         return file.getAbsolutePath();
     }
 
-    public static String getSaveImagePath(){
-        File file = new File(getSdCardPath()
+    public static String getSaveImagePath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"download"
                 +File.separator);
@@ -82,8 +82,8 @@ public class FileUtils {
         return file.getAbsolutePath();
     }
 
-    public static String getSaveApkPath(){
-        File file = new File(getSdCardPath()
+    public static String getSaveApkPath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"apk"
                 +File.separator);
@@ -93,8 +93,8 @@ public class FileUtils {
         return file.getAbsolutePath();
     }
 
-    public static String getTakeImagePath(){
-        File file = new File(getSdCardPath()
+    public static String getTakeImagePath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"photo"
                 +File.separator);
@@ -104,8 +104,8 @@ public class FileUtils {
         return file.getAbsolutePath();
     }
 
-    public static String getWebViewCachePath(){
-        File file = new File(getSdCardPath()
+    public static String getWebViewCachePath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"webViewCache"
                 +File.separator);
@@ -119,8 +119,8 @@ public class FileUtils {
      *  获取ImageLoader 的缓存文件内容
      * @return
      */
-    public static String getImageLoaderPath(){
-        File file = new File(getSdCardPath()
+    public static String getImageLoaderPath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"imageCache"
                 +File.separator);
@@ -134,8 +134,8 @@ public class FileUtils {
      *  获取 录音文件路径
      * @return
      */
-    public static String getVoicePath(){
-        File file = new File(getSdCardPath()
+    public static String getVoicePath(String pageName){
+        File file = new File(getSdCardPath(pageName)
                 +File.separator
                 +"voice"
                 +File.separator);
@@ -146,8 +146,8 @@ public class FileUtils {
     }
 
     //TODO 获取下载到的图片保存地址
-    public static File saveFileImage(String name) {
-        File file = new File(getSaveImagePath()
+    public static File saveFileImage(String name,String pageName) {
+        File file = new File(getSaveImagePath(pageName)
                 +File.separator
                 +name
                 );
@@ -155,8 +155,8 @@ public class FileUtils {
     }
 
     //TODO 获取APK文件的保存地址
-    public static File saveFileApkPath(String name) {
-        File file = new File(getSaveApkPath()
+    public static File saveFileApkPath(String name,String pageName) {
+        File file = new File(getSaveApkPath(pageName)
                 +File.separator
                 +name
                 +".apk");
@@ -164,8 +164,8 @@ public class FileUtils {
     }
 
     //TODO 获取照相机拍照的图片保存地址
-    public static File saveFileTakePhotoImage(String name) {
-        File file = new File(getTakeImagePath()
+    public static File saveFileTakePhotoImage(String name,String pageName) {
+        File file = new File(getTakeImagePath(pageName)
                 +File.separator
                 +name
                 +".png");
@@ -173,8 +173,8 @@ public class FileUtils {
     }
 
     // TODO 保存缓存图片的地址
-    public static File saveFileBitmap(Bitmap bitmap, String name) {
-        File f = new File(getSdCardPath() + File.separator + name
+    public static File saveFileBitmap(Bitmap bitmap, String name,String pageName) {
+        File f = new File(getSdCardPath(pageName) + File.separator + name
                 + ".jpg");
         FileOutputStream fOut = null;
         try {
@@ -187,8 +187,8 @@ public class FileUtils {
     }
 
     //TODO录音保存地址
-    public static File saveFileVoice() {
-        File file = new File(getVoicePath()
+    public static File saveFileVoice(String pageName) {
+        File file = new File(getVoicePath(pageName)
                 +File.separator
                 +generalFileName());
         return file;

@@ -75,4 +75,7 @@
 
     <color name="green_color">#0bb20c</color>
     <color name="word_color">#353535</color>
+
+    <color name="text_blue">#0076FF</color>
+    <color name="text_black">#333333</color>
 </resources>
